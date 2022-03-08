@@ -1,4 +1,4 @@
-# Sistemas Distribuídos
+# Sistemas Distribuídos - Programação Paralela para HPC
 **Códigos de Exercícios e Atividades**
 
 Estes códigos são exemplos de programação paralela com OpenMP e MPI. </br>
