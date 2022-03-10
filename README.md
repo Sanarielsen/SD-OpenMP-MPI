@@ -16,29 +16,53 @@ Os pacotes instalados foram: </br>
 &emsp; gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0 </br>
 &emsp; mpirun (Open MPI) 2.1.1 </br>
 Para instalar os pacotes use: </br>
-&emsp; apt-get install gcc openmpi-bin libopenmpi-dev git net-tools </br>
+
+```
+sudo apt-get install gcc openmpi-bin libopenmpi-dev git net-tools 
+```
 
 <b> Preparação do ambiente Linux para execução dos códigos. </b> </br>
-OpenMP - é necessário definir a quantidade de threads utilizando uma variável de ambiente. Use o comando abaixo: </br>
-&emsp; export OMP_NUM_THREADS=2 </br>
-MPI - é necessário definir o parametro de MCA (Modular Component Architecture) para não alertar a falta de rede Infiniband. Use o comando abaixo: </br>
-&emsp; export OMPI_MCA_btl_base_warn_component_unused=0 </br>
+OpenMP - é necessário definir a quantidade de threads utilizando uma variável de ambiente. Use o comando abaixo:
+
+```
+export OMP_NUM_THREADS=2 
+```
+
+MPI - é necessário definir o parametro de MCA (Modular Component Architecture) para não alertar a falta de rede Infiniband. Use o comando abaixo:
+
+```
+export OMPI_MCA_btl_base_warn_component_unused=0
+```
 
 <b> Parallel_1 </b> </br> 
-Para compilar use os exemplos abaixo: </br>
-&emsp; gcc -o hello hello.c </br> 
-&emsp; gcc -o parallel_hello -fopenmp parallel_hello.c </br>
-Após compilar os códigos é possível executá-los via terminal com os comandos: </br>
-&emsp; ./hello </br>
-&emsp; ./parallel_hello </br>
+Para compilar use os exemplos abaixo:
+
+```
+gcc -o hello hello.c
+gcc -o parallel_hello -fopenmp parallel_hello.c 
+```
+
+Após compilar os códigos é possível executá-los via terminal com os comandos: 
+
+```
+./hello
+./parallel_hello 
+```
 
 <b> Parallel_2 </b> </br>
-Para compilar use os exemplos abaixo: </br>
-&emsp; gcc -o sort_serial -fopenmp sort_serial.c </br>
-&emsp; gcc -o sort_parallel -fopenmp sort_parallel.c </br>
-Após compilar os códigos é possível executá-los indicando o arquivo de entrada via terminal com os comandos: </br>
-&emsp; ./sort_serial < arq3.in </br>
-&emsp; ./sort_parallel < arq3.in </br>
+Para compilar use os exemplos abaixo: 
+
+```
+gcc -o sort_serial -fopenmp sort_serial.c 
+gcc -o sort_parallel -fopenmp sort_parallel.c 
+```
+
+Após compilar os códigos é possível executá-los indicando o arquivo de entrada via terminal com os comandos: 
+
+```
+./sort_serial < arq3.in
+./sort_parallel < arq3.in
+```
 
 <b> Parallel_3 </b> </br>
 Exercício: Código de uma sequência de Fibonacci em serial. </br>
@@ -48,28 +72,48 @@ Este é o primeiro exercício de paralelização de código. </br>
 Exercício: Código de soma de elementos de um vetor. </br>
 Veja o código serial em C e utilize seus conhecimentos para paralelizar o código com OpenMP e MPI. </br>
 Neste diretório está o código serial em C e em Python, dessa forma, pode-se comparar o desempenho de cada linguagem. </br>
-Para compilar use os exemplos abaixo: </br>
-&emsp; gcc -o soma -fopenmp soma.c </br>
-Após compilar o código em C é possível executar ambos em terminal com os comandos: </br>
-&emsp; ./soma </br>
-&emsp; python3 ./soma.py </br>
+Para compilar use os exemplos abaixo: 
+
+```
+ gcc -o soma -fopenmp soma.c 
+```
+
+Após compilar o código em C é possível executar ambos em terminal com os comandos: 
+
+```
+./soma
+ python3 ./soma.py 
+```
 
 <b> MPI_1 </b> </br>
-Códigos hello_mpi e um código simples com send e recv em MPI.
-Para compilar use os exemplos abaixo: </br>
-&emsp; mpicc -o simples simples.c </br>
-&emsp; mpicc -o hello_mpi hello_mpi.c </br>
-Após compilar o código em C com MPI é possível executar ambos em terminal com os comandos: </br>
-&emsp; mpirun -n 2 ./hello_mpi </br>
-&emsp; mpirun -n 2 ./simples </br>
+Códigos hello_mpi e um código simples com send e recv em MPI. </br>
+Para compilar use os exemplos abaixo:
+
+```
+mpicc -o simples simples.c </br>
+mpicc -o hello_mpi hello_mpi.c </br>
+```
+
+Após compilar o código em C com MPI é possível executar ambos em terminal com os comandos:
+
+```
+mpirun -n 2 ./hello_mpi </br>
+mpirun -n 2 ./simples </br>
+```
 
 <b> MPI_2 </b> </br>
 Código exemplo de redução com MPI. </br>
-Para compilar use os exemplos abaixo: </br>
-&emsp; mpicc -o reduce_mpi reduce_mpi.c </br>
-Após compilar o código em C com MPI é possível executar em terminal com o comando: </br>
-&emsp; mpirun -n 2 ./reduce_mpi </br>
+Para compilar use os exemplos abaixo:
 
+```
+mpicc -o reduce_mpi reduce_mpi.c 
+```
+
+Após compilar o código em C com MPI é possível executar em terminal com o comando:
+
+```
+mpirun -n 2 ./reduce_mpi </br>
+```
 
 <b> Referências </b> </br>
 Exercícios Prof. Guido Araújo - Unicamp </br>
