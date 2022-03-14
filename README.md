@@ -90,15 +90,15 @@ Códigos hello_mpi e um código simples com send e recv em MPI. </br>
 Para compilar use os exemplos abaixo:
 
 ```
-mpicc -o simples simples.c </br>
-mpicc -o hello_mpi hello_mpi.c </br>
+mpicc -o simples simples.c
+mpicc -o hello_mpi hello_mpi.c
 ```
 
 Após compilar o código em C com MPI é possível executar ambos em terminal com os comandos:
 
 ```
-mpirun -n 2 ./hello_mpi </br>
-mpirun -n 2 ./simples </br>
+mpirun -n 2 ./hello_mpi
+mpirun -n 2 ./simples
 ```
 
 <b> MPI_2 </b> </br>
@@ -112,7 +112,7 @@ mpicc -o reduce_mpi reduce_mpi.c
 Após compilar o código em C com MPI é possível executar em terminal com o comando:
 
 ```
-mpirun -n 2 ./reduce_mpi </br>
+mpirun -n 2 ./reduce_mpi
 ```
 
 <b> Referências </b> </br>
